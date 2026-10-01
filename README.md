@@ -28,3 +28,6 @@ Data is saved in each browser's `localStorage`. Use fake data on a public site.
 
 ## Ideas
 Shared database (Firebase/Supabase), logins, edit cases, weekly summary charts.
+
+## Screenshot
+![Screenshot](case-dashboard.png)
