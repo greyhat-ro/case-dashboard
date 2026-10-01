@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Resolution Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+  <h1>Case Resolution Dashboard</h1>
+  <section id="stats" class="stats" aria-live="polite"></section>
+
+  <form id="f" novalidate>
+    <div class="g">
+      <label>Case ID<input id="cid" autocomplete="off" required></label>
+      <label>Case URL<input id="url" type="url" placeholder="https://..." required></label>
+      <label>Date &amp; time (auto)<input id="when" readonly></label>
+    </div>
+    <label>Annotation <button type="button" id="tpl" class="link">Insert header</button>
+      <textarea id="ann" rows="4" placeholder="Decision: F+ | Post: closure&#10;Notes about the case..."></textarea>
+    </label>
+    <div class="g two">
+      <label>Decision (auto from header)<input id="dec" readonly></label>
+      <label>Post-decision (auto from header)<input id="post" readonly></label>
+    </div>
+    <p id="msg" role="status"></p>
+    <button class="btn">Save case</button>
+  </form>
+
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search case ID or annotation" aria-label="Search">
+    <select id="flt" aria-label="Filter by decision"></select>
+    <button id="csv" class="btn ghost" type="button">Download CSV</button>
+  </div>
+  <div class="tbl"><table>
+    <thead><tr><th>Case ID</th><th>Date &amp; time</th><th>Decision</th><th>Post-decision</th><th>Annotation</th><th></th></tr></thead>
+    <tbody id="rows"></tbody>
+  </table></div>
+  <p class="foot">Data is stored in this browser only (localStorage). Do not enter sensitive data on a public site.</p>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
